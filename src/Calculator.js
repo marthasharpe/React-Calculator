@@ -1,24 +1,30 @@
 import React from 'react';
 import Buttons from './Buttons';
+import Result from './Result';
+import buttonData from './buttonData'
+import './Calculator.css'
+
+let data = buttonData;
 
 class Calculator extends React.Component {
     state = {
-        display: 0,
-    }
-
-    handleClick = (e) => {
-        this.setState({
-            display: e.target.value
-        })
+        result: 0,
     }
 
     render() {
         return (
             <div className="calculator-container">
-                <h1 id="display">
-                    {this.state.display}
-                </h1>
-                <Buttons handleClick={this.handleClick}/>
+                <Result result={this.state.result}/>
+                <button id="clear">Clear</button>
+                <div className="buttons-container">
+                    {data.map(button => (
+                        <Buttons 
+                            id={button.id}
+                            key={button.name}
+                            name={button.name}
+                        />
+                    ))}
+                </div>
             </div>
         )
     }

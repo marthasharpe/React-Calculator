@@ -1,0 +1,13 @@
+.calculator-container {
+    display: flex;
+    flex-direction: column;
+    border: 2px solid black;
+    width: 300px;
+    padding: 10;
+}
+
+.buttons-container {
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
