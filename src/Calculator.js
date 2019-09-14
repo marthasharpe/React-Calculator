@@ -77,7 +77,6 @@ class Calculator extends React.Component {
         return (
             <div className="calculator-container">
                 <Display newNumber={this.state.newNumber} oldNumber={this.state.oldNumber}/>
-                <button id="clear" onClick={this.clearResult}>Clear</button>
                 <div className="buttons-container">
                     {data.map(button => (
                         <Buttons 
@@ -87,6 +86,7 @@ class Calculator extends React.Component {
                             setNewNumber={this.setNewNumber}
                             setOperator={this.setOperator}
                             calculate={this.calculate}
+                            clearResult={this.clearResult}
                         />
                     ))}
                 </div>

@@ -30,6 +30,9 @@ class Buttons extends React.Component {
             case "=":
                 this.props.setOperator(this.props.name);
                 break;
+            case "clear":
+                this.props.clearResult();
+                break;
             default:
                 break;
         }
