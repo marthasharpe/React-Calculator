@@ -9,7 +9,7 @@ class Display extends React.Component {
     render () {
         return (
             <div id="result" style={displayStyle}>
-                <h2>{this.props.newNumber !== '' ? this.props.newNumber : this.props.oldNumber}</h2>
+                <h2>{this.props.secondNumber !== '' ? this.props.secondNumber : this.props.firstNumber}</h2>
             </div>
         )
     }
