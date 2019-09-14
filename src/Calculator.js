@@ -32,6 +32,10 @@ class Calculator extends React.Component {
                 firstNumber: this.state.secondNumber,
                 secondNumber: name
             })
+        } else if (name === '.' && this.state.secondNumber.includes('.')) {
+            this.setState({
+                secondNumber: this.state.secondNumber
+            })
         } else {
             this.setState({
                 secondNumber: this.state.secondNumber + name
