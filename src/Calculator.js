@@ -10,14 +10,14 @@ class Calculator extends React.Component {
     state = {
         oldNumber: '0',
         newNumber: '',
-        operator: null,
+        operator: '',
     }
 
     clearResult = () => {
         this.setState({
             oldNumber: '0',
             newNumber: '',
-            operator: null,
+            operator: '',
         })
     }
 
@@ -28,8 +28,7 @@ class Calculator extends React.Component {
     }
 
     setOperator = (name) => {
-        console.log(this.state.operator)
-        if (this.state.operator === null){
+        if (this.state.operator === ''){
             this.setState({
                 oldNumber: this.state.newNumber,
                 newNumber: '',
@@ -64,9 +63,10 @@ class Calculator extends React.Component {
                 break;
         }
         this.setState({
-            oldNumber: result,
+            oldNumber: result.toString(),
             newNumber: '',
         })
+        console.log(this.state)
     }
 
     render() {

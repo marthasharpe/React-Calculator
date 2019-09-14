@@ -29,9 +29,6 @@ class Buttons extends React.Component {
             case "/":
                 this.props.setOperator(this.props.name);
                 break;
-            case "=":
-                this.props.calculate();
-                break;
             default:
                 break;
         }
@@ -39,7 +36,7 @@ class Buttons extends React.Component {
         //if button is a number, store the string of numbers as newNumber
         //if operator is pressed, the first string becomes oldNumber and the next string of numbers becomes newNumber
         //if another operator is pressed, the result of oldNumber and newNumber is calculated and becomes newNumber
-        //if equals is pressed, it displays the result
+        //if equals is pressed, the result of oldNumber and newNumber is calculated and becomes newNumber 
         //if clear is pressed, display is zero
 
     render () {
