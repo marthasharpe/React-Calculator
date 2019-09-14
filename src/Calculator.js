@@ -59,6 +59,9 @@ class Calculator extends React.Component {
             case "/":
                 result = parseFloat(this.state.oldNumber) / parseFloat(this.state.newNumber);
                 break;
+            case "=":
+                result = parseFloat(this.state.newNumber);
+                break;
             default:
                 break;
         }
@@ -66,6 +69,7 @@ class Calculator extends React.Component {
             oldNumber: result.toString(),
             newNumber: '',
         })
+        //if equals is pushed, the result should be newNumber and operator should be null
         console.log(this.state)
     }
 
