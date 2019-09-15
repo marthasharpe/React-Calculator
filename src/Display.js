@@ -3,6 +3,8 @@ import React from 'react';
 const displayStyle = {
     background: "darkblue",
     color: "white",
+    textAlign: "right",
+    paddingRight: 20
 }
 
 class Display extends React.Component {
