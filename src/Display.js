@@ -8,7 +8,7 @@ const displayStyle = {
 class Display extends React.Component {
     render () {
         return (
-            <div id="result" style={displayStyle}>
+            <div id="display" style={displayStyle}>
                 <h2>{this.props.secondNumber !== '' ? this.props.secondNumber : this.props.firstNumber}</h2>
             </div>
         )

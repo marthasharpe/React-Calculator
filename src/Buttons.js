@@ -38,12 +38,6 @@ class Buttons extends React.Component {
                 break;
         }
     }
-        //if button is a number, store the string of numbers as secondNumber until 
-        //if there is no operator and operator is pressed, the first string becomes oldNumber
-        //the next string of number becomes newNumber
-        //if another operator is pressed, the result of oldNumber and newNumber is calculated and becomes oldNumber and the new operator is stored
-        //if equals is pressed, the result of oldNumber and newNumber is calculated and becomes oldNumber
-        //if clear is pressed, display is zero
 
     render () {
         return (

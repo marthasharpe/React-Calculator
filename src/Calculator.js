@@ -22,7 +22,6 @@ class Calculator extends React.Component {
     }
 
     setSecondNumber = (name) => {
-        //if a decimal is pressed, if newnumber == '', then secondNumber should be 0 + name, if secondNumber already has a decimal it should do nothing
         if (this.state.secondNumber === '0' && name === '.'){
             this.setState({
                 secondNumber: this.state.secondNumber + name
@@ -42,14 +41,23 @@ class Calculator extends React.Component {
             })
         }
     }
-
+    //if an operator is pressed followed by '-' followed by a secondNumber, then instead of changing the operator, the secondNumber should be negative, but if another operator is pressed it should replace the '-' as usual
+    
     setOperator = (name) => {
-        console.log('setOperator', this.state)
         if (this.state.operator === ''){
             this.setState({
                 firstNumber: this.state.secondNumber,
                 secondNumber: '',
                 operator: name
+            })
+        } else if ((this.state.secondNumber === '' || this.state.secondNumber === '-') && name !== '-') {
+            this.setState({
+                secondNumber: '',
+                operator: name
+            })
+        } else if (this.state.secondNumber === '' && name === '-') {
+            this.setState({
+                secondNumber: name
             })
         } else {
             this.setState({
@@ -62,7 +70,6 @@ class Calculator extends React.Component {
     }
 
     calculate = () => {
-        console.log('calculate', this.state)
         let result;
         switch (this.state.operator) {
             case "+":
@@ -76,9 +83,6 @@ class Calculator extends React.Component {
                 break;
             case "/":
                 result = parseFloat(this.state.firstNumber) / parseFloat(this.state.secondNumber);
-                break;
-            case "=":
-                result = parseFloat(this.state.secondNumber);
                 break;
             default:
                 break;
@@ -101,7 +105,6 @@ class Calculator extends React.Component {
                             name={button.name}
                             setSecondNumber={this.setSecondNumber}
                             setOperator={this.setOperator}
-                            calculate={this.calculate}
                             clearResult={this.clearResult}
                         />
                     ))}
