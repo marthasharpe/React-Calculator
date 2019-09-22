@@ -41,7 +41,6 @@ class Calculator extends React.Component {
             })
         }
     }
-    //if an operator is pressed followed by '-' followed by a secondNumber, then instead of changing the operator, the secondNumber should be negative, but if another operator is pressed it should replace the '-' as usual
     
     setOperator = (name) => {
         if (this.state.operator === ''){
