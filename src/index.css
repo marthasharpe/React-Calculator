@@ -1,7 +1,5 @@
 html, body {
   margin: 0;
-  display: flex;
-  justify-content: center;
   height: 100%;
-  align-items: center;
+  width: 100%;
 }
